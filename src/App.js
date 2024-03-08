@@ -14,11 +14,12 @@ function App() {
     <Router>
     <Header />
     <Cart />
+    <MainPage />
     <Routes>
       <Route path="/"/>
       <Route path="/cart"/>
     </Routes>
-    <MainPage />
+    
    </Router>
    
    </div>
