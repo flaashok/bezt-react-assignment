@@ -22,7 +22,7 @@ const ProductCart = () => {
     <>
       
       {product.map((product) => (
-        <div className='col-lg-4 col-sm-6 col-xs-12' key={product.id}>
+        <div className='col-lg-4 col-sm-6 col-xs-12 my-3' key={product.id}>
            
            <div class="product-card">
 		<div class="badge">Hot</div>
