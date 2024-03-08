@@ -27,7 +27,7 @@ const Nav = () => {
             <li><Link to="/"><i class="fa-solid fa-magnifying-glass"></i> Search</Link></li>
                     <li><Link to="/">Log In</Link></li>
                     <li><Link to="/">Sign In</Link></li>
-                    <li><Link to="" onClick={() => useApp.setOpen(true)}><i class="fa-solid fa-cart-shopping"></i></Link></li>
+                    <li><Link to="javascript:void(0)" className='openCart'><i class="fa-solid fa-cart-shopping"></i></Link></li>
                 </ul>
         </div>
         </div>

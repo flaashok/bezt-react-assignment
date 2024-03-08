@@ -8,6 +8,7 @@ import Header from './omponents/Header';
 import MainPage from './pages/MainPage';
 import { Cart } from './pages/Cart';
 import { AppProvider } from './productcontex';
+import ProductsPage from './pages/ProductsPage';
 
 const Appstate = createContext();
 function App() {
@@ -22,7 +23,8 @@ function App() {
     <MainPage />
     <Routes>
       <Route path="/"/>
-      <Route path="/cart"/>
+      <Route path="/cart" element={<Cart />}/>
+      <Route path="/product/:id" element={ProductsPage} />
     </Routes>
     
    </Router>

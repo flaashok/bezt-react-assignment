@@ -42,17 +42,17 @@
     -->
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-  <!-- <script>
-   function handleClick(e) {
-        var curr = e.target.textContent;
-        var elem = document.querySelectorAll('.cart');
-        for (var i = 0; i < elem.length; i++) {
-            if (elem[i].textContent === curr) {
-                elem[i].className = 'active';
-            } else {
-                elem[i].className = '';
-            }
-        }
-    };
-  </script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+    $(".openCart, .closeDraw").click(function(){
+  $("#cart").toggleClass("active");
+});
+  });
+
+//   $('.openCart, .closeDraw').on('click', function(){
+//     $('').toggleClass('active');
+// });
+</script>
 </html>

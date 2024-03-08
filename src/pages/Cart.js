@@ -7,8 +7,8 @@ export const Cart = () => {
     
   return (
     <>
-        <div className={useApp.open? "active": "cart"}>
-            <div className='cartTitle'>Your Cart <Link to="" onClick={() => useApp.setOpen(true)} className='closeDraw'><i class="fa-solid fa-xmark"></i></Link></div>
+        <div className="cart" id='cart'>
+            <div className='cartTitle'>Your Cart <Link to="" className='closeDraw'><i class="fa-solid fa-xmark"></i></Link></div>
 
             <div className='cartBox'>
                 <div className='cartPics'>
