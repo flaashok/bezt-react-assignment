@@ -27,7 +27,7 @@ const ProductCart = () => {
            <div class="product-card">
 		<div class="badge">Hot</div>
 		<div class="product-tumb">
-        <Link to={product.url}> <img src={product.image} alt={product.title}/> 
+        <Link to={product.id}> <img src={product.image} alt={product.title}/> 
             <span className='viewBtn'>View Product</span>
         </Link>
 		</div>

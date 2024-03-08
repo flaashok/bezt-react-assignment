@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Appstate } from '../App'
 
 export const Cart = () => {
+    const useApp = useState(Appstate)
     
   return (
     <>
-        <div className="cart">
-            <div className='cartTitle'>Your Cart <Link to="" className='closeDraw'><i class="fa-solid fa-xmark"></i></Link></div>
+        <div className={useApp.open? "active": "cart"}>
+            <div className='cartTitle'>Your Cart <Link to="" onClick={() => useApp.setOpen(true)} className='closeDraw'><i class="fa-solid fa-xmark"></i></Link></div>
 
             <div className='cartBox'>
                 <div className='cartPics'>

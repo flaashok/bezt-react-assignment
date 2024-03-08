@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Cart from '../pages/Cart';
+import { Appstate } from '../App'
 
 const Nav = () => {
-  
+    const useApp = useContext(Appstate);
+      
+
   return (
     <div className='container-fluid navSection'>
         <div className='row'>
@@ -25,7 +27,7 @@ const Nav = () => {
             <li><Link to="/"><i class="fa-solid fa-magnifying-glass"></i> Search</Link></li>
                     <li><Link to="/">Log In</Link></li>
                     <li><Link to="/">Sign In</Link></li>
-                    <li><Link to="javascript:void(0)"><i class="fa-solid fa-cart-shopping"></i></Link></li>
+                    <li><Link to="" onClick={() => useApp.setOpen(true)}><i class="fa-solid fa-cart-shopping"></i></Link></li>
                 </ul>
         </div>
         </div>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const LeftNav = () => {
   return (
-    <div className='container'>
+    <div className='container sticky'>
         <div className='row'>
             <div className='col-12 leftMenuSection'>
                 <div className='firstmenuItem'>
