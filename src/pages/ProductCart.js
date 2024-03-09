@@ -7,10 +7,15 @@ import SingleProduct from '../components/SingleProduct';
 
 
 const ProductCart = () => {
-  const [show, setShow] = useState(false);
+ // const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+ // const handleClose = () => setShow(false);
+ // const handleShow = () => setShow(true);
+
+ const [selectedProduct, setSelectedProduct] = useState(null);
+ const [isModalOpen, setIsModalOpen] = useState(false);
+
+
   // const {id} = useParams({});
   // const [singleP, setSingleP] = useState({});
     const [product, setProducts] = useState([]);
@@ -25,7 +30,15 @@ const ProductCart = () => {
       });
   }, []);
 
-  
+  const openModal = (product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
 
   return (
     <>
@@ -36,7 +49,7 @@ const ProductCart = () => {
            <div class="product-card">
 		<div class="badge">Hot</div>
 		<div class="product-tumb">
-        <Link to={`/product/${product.id}`} onClick={handleShow}> <img src={product.image} alt={product.title}/> 
+        <Link to={`/productItem/${product.id}`} onClick={() => openModal(product)}> <img src={product.image} alt={product.title}/> 
             <span className='viewBtn'>View Product</span>
         </Link>
 		</div>
@@ -61,15 +74,24 @@ const ProductCart = () => {
 {/* <Button variant="primary" onClick={handleShow}>
         Launch demo modal
       </Button> */}
+ {isModalOpen && (
 
-      <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered show={show} onHide={handleClose}>
+      <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered show={openModal} onHide={closeModal}>
         <Modal.Header closeButton>
           
         </Modal.Header>
         <Modal.Body>
           <div className='container'>
             <div className='row'>
-              <SingleProduct />
+            {selectedProduct && (
+              <div>
+                <h2>{selectedProduct.title}</h2>
+                <p>{selectedProduct.description}</p>
+                <p>Price: ${selectedProduct.price}</p>
+                <img src={selectedProduct.image} alt={selectedProduct.title} />
+              </div>
+            )}
+              {/* <SingleProduct /> */}
               {/* <div className='col-lg-4'>
                 <img src='' alt=''/>
               </div>
@@ -88,14 +110,15 @@ const ProductCart = () => {
 
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={closeModal}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={closeModal}>
             Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
+)}
 
     </>
   );
