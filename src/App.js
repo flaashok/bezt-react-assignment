@@ -4,7 +4,7 @@ import './App.css';
 import './Header.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import Header from './omponents/Header';
+import Header from './components/Header';
 import MainPage from './pages/MainPage';
 import { Cart } from './pages/Cart';
 import { AppProvider } from './productcontex';
