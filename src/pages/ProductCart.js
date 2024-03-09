@@ -82,14 +82,22 @@ const ProductCart = () => {
         </Modal.Header>
         <Modal.Body>
           <div className='container'>
-            <div className='row'>
+            
             {selectedProduct && (
-              <div>
-                <h2>{selectedProduct.title}</h2>
-                <p>{selectedProduct.description}</p>
-                <p>Price: ${selectedProduct.price}</p>
-                <img src={selectedProduct.image} alt={selectedProduct.title} />
-              </div>
+              <div className='row'>
+              <div className='col-lg-4 col-md-4 col-12'>
+                  <div className='img'>
+                  <img src={selectedProduct.image} alt={selectedProduct.title} className='img-fluid'/>
+                  </div>
+                </div>
+                <div className='col-lg-8 col-md-8 col-12'>
+                  <div className='extraInfomation'>
+                    <div className='titlename'><h4>{selectedProduct.title}</h4></div>
+                    <div className='decname'>{selectedProduct.description}</div>
+                    <div className='price'>Price: ${selectedProduct.price}</div>
+                  </div>
+                </div>
+                </div>   
             )}
               {/* <SingleProduct /> */}
               {/* <div className='col-lg-4'>
@@ -105,7 +113,7 @@ const ProductCart = () => {
           </Button> 
                 </div>
               </div>*/}
-            </div>
+            
           </div>
 
         </Modal.Body>
@@ -114,7 +122,7 @@ const ProductCart = () => {
             Close
           </Button>
           <Button variant="primary" onClick={closeModal}>
-            Save Changes
+            ADD TO CART
           </Button>
         </Modal.Footer>
       </Modal>
