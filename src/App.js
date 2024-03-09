@@ -8,7 +8,8 @@ import Header from './components/Header';
 import MainPage from './pages/MainPage';
 import { Cart } from './pages/Cart';
 import { AppProvider } from './productcontex';
-import ProductsPage from './pages/ProductsPage';
+//import ProductsPage from './pages/ProductsPage';
+import SingleProduct from './components/SingleProduct';
 
 const Appstate = createContext();
 function App() {
@@ -24,7 +25,8 @@ function App() {
     <Routes>
       <Route path="/"/>
       <Route path="/cart" element={<Cart />}/>
-      <Route path="/product/:id" element={ProductsPage} />
+      <Route path="/productItem/:productCode" element={<SingleProduct />} />
+      <Route path="/productItem" element={<SingleProduct />} />
     </Routes>
     
    </Router>
